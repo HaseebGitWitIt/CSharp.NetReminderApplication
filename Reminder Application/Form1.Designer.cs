@@ -33,12 +33,14 @@
             this.UsernameInput = new System.Windows.Forms.TextBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.ApplicationPanel = new System.Windows.Forms.Panel();
+            this.RepeatInput = new System.Windows.Forms.CheckBox();
+            this.SubmitReminder = new System.Windows.Forms.Button();
+            this.TimeInput = new System.Windows.Forms.DateTimePicker();
             this.ReminderMessage = new System.Windows.Forms.TextBox();
             this.ReminderLabel = new System.Windows.Forms.Label();
             this.WelcomeMessage = new System.Windows.Forms.Label();
-            this.TimeInput = new System.Windows.Forms.DateTimePicker();
-            this.SubmitReminder = new System.Windows.Forms.Button();
-            this.RepeatInput = new System.Windows.Forms.CheckBox();
+            this.ReminderName = new System.Windows.Forms.TextBox();
+            this.SaveLabel = new System.Windows.Forms.Label();
             this.UsernamePanel.SuspendLayout();
             this.ApplicationPanel.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +84,8 @@
             // 
             // ApplicationPanel
             // 
+            this.ApplicationPanel.Controls.Add(this.SaveLabel);
+            this.ApplicationPanel.Controls.Add(this.ReminderName);
             this.ApplicationPanel.Controls.Add(this.RepeatInput);
             this.ApplicationPanel.Controls.Add(this.SubmitReminder);
             this.ApplicationPanel.Controls.Add(this.TimeInput);
@@ -93,6 +97,37 @@
             this.ApplicationPanel.Size = new System.Drawing.Size(426, 290);
             this.ApplicationPanel.TabIndex = 3;
             this.ApplicationPanel.Visible = false;
+            // 
+            // RepeatInput
+            // 
+            this.RepeatInput.AutoSize = true;
+            this.RepeatInput.Checked = true;
+            this.RepeatInput.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.RepeatInput.Location = new System.Drawing.Point(236, 94);
+            this.RepeatInput.Name = "RepeatInput";
+            this.RepeatInput.Size = new System.Drawing.Size(61, 17);
+            this.RepeatInput.TabIndex = 8;
+            this.RepeatInput.Text = "Repeat";
+            this.RepeatInput.UseVisualStyleBackColor = true;
+            // 
+            // SubmitReminder
+            // 
+            this.SubmitReminder.Location = new System.Drawing.Point(268, 126);
+            this.SubmitReminder.Name = "SubmitReminder";
+            this.SubmitReminder.Size = new System.Drawing.Size(75, 23);
+            this.SubmitReminder.TabIndex = 7;
+            this.SubmitReminder.Text = "Save";
+            this.SubmitReminder.UseVisualStyleBackColor = true;
+            this.SubmitReminder.Click += new System.EventHandler(this.SubmitReminder_Click);
+            // 
+            // TimeInput
+            // 
+            this.TimeInput.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimeInput.Location = new System.Drawing.Point(236, 66);
+            this.TimeInput.Name = "TimeInput";
+            this.TimeInput.ShowUpDown = true;
+            this.TimeInput.Size = new System.Drawing.Size(173, 20);
+            this.TimeInput.TabIndex = 6;
             // 
             // ReminderMessage
             // 
@@ -122,36 +157,22 @@
             this.WelcomeMessage.Text = "Welcome";
             this.WelcomeMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TimeInput
+            // ReminderName
             // 
-            this.TimeInput.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.TimeInput.Location = new System.Drawing.Point(236, 66);
-            this.TimeInput.Name = "TimeInput";
-            this.TimeInput.ShowUpDown = true;
-            this.TimeInput.Size = new System.Drawing.Size(173, 20);
-            this.TimeInput.TabIndex = 6;
+            this.ReminderName.Location = new System.Drawing.Point(160, 128);
+            this.ReminderName.MaxLength = 10;
+            this.ReminderName.Name = "ReminderName";
+            this.ReminderName.Size = new System.Drawing.Size(102, 20);
+            this.ReminderName.TabIndex = 9;
             // 
-            // SubmitReminder
+            // SaveLabel
             // 
-            this.SubmitReminder.Location = new System.Drawing.Point(187, 124);
-            this.SubmitReminder.Name = "SubmitReminder";
-            this.SubmitReminder.Size = new System.Drawing.Size(75, 23);
-            this.SubmitReminder.TabIndex = 7;
-            this.SubmitReminder.Text = "Submit";
-            this.SubmitReminder.UseVisualStyleBackColor = true;
-            this.SubmitReminder.Click += new System.EventHandler(this.SubmitReminder_Click);
-            // 
-            // RepeatInput
-            // 
-            this.RepeatInput.AutoSize = true;
-            this.RepeatInput.Checked = true;
-            this.RepeatInput.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.RepeatInput.Location = new System.Drawing.Point(236, 94);
-            this.RepeatInput.Name = "RepeatInput";
-            this.RepeatInput.Size = new System.Drawing.Size(61, 17);
-            this.RepeatInput.TabIndex = 8;
-            this.RepeatInput.Text = "Repeat";
-            this.RepeatInput.UseVisualStyleBackColor = true;
+            this.SaveLabel.AutoSize = true;
+            this.SaveLabel.Location = new System.Drawing.Point(4, 131);
+            this.SaveLabel.Name = "SaveLabel";
+            this.SaveLabel.Size = new System.Drawing.Size(150, 13);
+            this.SaveLabel.TabIndex = 10;
+            this.SaveLabel.Text = "I want to save this reminder as";
             // 
             // ReminderApplication
             // 
@@ -186,6 +207,8 @@
         private System.Windows.Forms.DateTimePicker TimeInput;
         private System.Windows.Forms.Button SubmitReminder;
         private System.Windows.Forms.CheckBox RepeatInput;
+        private System.Windows.Forms.Label SaveLabel;
+        private System.Windows.Forms.TextBox ReminderName;
     }
 }
 

@@ -11,13 +11,13 @@ namespace Reminder_Application
         public String message { get; set; }
         public DateTime time { get; set; }
         public bool repeat { get; set; }
-        private String creationDate;
-        public Reminder(String message, DateTime time, Boolean repeat, String creationDate)
+        public String name { get; set; }
+        public Reminder(String message, DateTime time, Boolean repeat, String name)
         {
             this.message = message;
             this.time = time;
             this.repeat = repeat;
-            this.creationDate = creationDate;
+            this.name = name;
         }
     }
 }

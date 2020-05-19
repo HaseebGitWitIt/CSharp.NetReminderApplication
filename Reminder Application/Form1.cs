@@ -13,7 +13,7 @@ namespace Reminder_Application
 {
     public partial class ReminderApplication : Form
     {
-        IDictionary<String, Reminder> reminders = new Dictionary<String, Reminder>();
+        List<Reminder> reminders = new List<Reminder>();
         private String username;
         public ReminderApplication()
         {
@@ -43,14 +43,14 @@ namespace Reminder_Application
         private void SubmitReminder_Click(object sender, EventArgs e)
         {
             String message = ReminderMessage.Text;
+            String name = ReminderName.Text;
 
-            if (ValidateUserInput(message))
+            if (ValidateUserInput(message) && ValidateUserInput(name))
             {
-                String creationDate = new DateTime().ToString();
                 DateTime time = TimeInput.Value;
                 bool repeat = RepeatInput.Checked;
-                Reminder temp = new Reminder(message, time, repeat, creationDate);
-                reminders.Add(creationDate, temp);
+                Reminder temp = new Reminder(message, time, repeat, name);
+                reminders.Add(temp);
             }
         }
     }
