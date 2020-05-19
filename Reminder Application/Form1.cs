@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace Reminder_Application
 {
     public partial class ReminderApplication : Form
     {
+        IDictionary<String, Reminder> reminders = new Dictionary<String, Reminder>();
         private String username;
         public ReminderApplication()
         {
@@ -36,6 +38,20 @@ namespace Reminder_Application
                 return true;
             }
             return false;
+        }
+
+        private void SubmitReminder_Click(object sender, EventArgs e)
+        {
+            String message = ReminderMessage.Text;
+
+            if (ValidateUserInput(message))
+            {
+                String creationDate = new DateTime().ToString();
+                DateTime time = TimeInput.Value;
+                bool repeat = RepeatInput.Checked;
+                Reminder temp = new Reminder(message, time, repeat, creationDate);
+                reminders.Add(creationDate, temp);
+            }
         }
     }
 }

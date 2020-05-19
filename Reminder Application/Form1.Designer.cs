@@ -38,6 +38,7 @@
             this.WelcomeMessage = new System.Windows.Forms.Label();
             this.TimeInput = new System.Windows.Forms.DateTimePicker();
             this.SubmitReminder = new System.Windows.Forms.Button();
+            this.RepeatInput = new System.Windows.Forms.CheckBox();
             this.UsernamePanel.SuspendLayout();
             this.ApplicationPanel.SuspendLayout();
             this.SuspendLayout();
@@ -81,6 +82,7 @@
             // 
             // ApplicationPanel
             // 
+            this.ApplicationPanel.Controls.Add(this.RepeatInput);
             this.ApplicationPanel.Controls.Add(this.SubmitReminder);
             this.ApplicationPanel.Controls.Add(this.TimeInput);
             this.ApplicationPanel.Controls.Add(this.ReminderMessage);
@@ -137,6 +139,19 @@
             this.SubmitReminder.TabIndex = 7;
             this.SubmitReminder.Text = "Submit";
             this.SubmitReminder.UseVisualStyleBackColor = true;
+            this.SubmitReminder.Click += new System.EventHandler(this.SubmitReminder_Click);
+            // 
+            // RepeatInput
+            // 
+            this.RepeatInput.AutoSize = true;
+            this.RepeatInput.Checked = true;
+            this.RepeatInput.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.RepeatInput.Location = new System.Drawing.Point(236, 94);
+            this.RepeatInput.Name = "RepeatInput";
+            this.RepeatInput.Size = new System.Drawing.Size(61, 17);
+            this.RepeatInput.TabIndex = 8;
+            this.RepeatInput.Text = "Repeat";
+            this.RepeatInput.UseVisualStyleBackColor = true;
             // 
             // ReminderApplication
             // 
@@ -170,6 +185,7 @@
         private System.Windows.Forms.Label ReminderLabel;
         private System.Windows.Forms.DateTimePicker TimeInput;
         private System.Windows.Forms.Button SubmitReminder;
+        private System.Windows.Forms.CheckBox RepeatInput;
     }
 }
 
