@@ -33,14 +33,19 @@
             this.UsernameInput = new System.Windows.Forms.TextBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.ApplicationPanel = new System.Windows.Forms.Panel();
+            this.SaveLabel = new System.Windows.Forms.Label();
+            this.ReminderName = new System.Windows.Forms.TextBox();
             this.RepeatInput = new System.Windows.Forms.CheckBox();
             this.SubmitReminder = new System.Windows.Forms.Button();
             this.TimeInput = new System.Windows.Forms.DateTimePicker();
             this.ReminderMessage = new System.Windows.Forms.TextBox();
             this.ReminderLabel = new System.Windows.Forms.Label();
             this.WelcomeMessage = new System.Windows.Forms.Label();
-            this.ReminderName = new System.Windows.Forms.TextBox();
-            this.SaveLabel = new System.Windows.Forms.Label();
+            this.ReminderList = new System.Windows.Forms.ListView();
+            this.RName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RRepeat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.UsernamePanel.SuspendLayout();
             this.ApplicationPanel.SuspendLayout();
             this.SuspendLayout();
@@ -84,6 +89,7 @@
             // 
             // ApplicationPanel
             // 
+            this.ApplicationPanel.Controls.Add(this.ReminderList);
             this.ApplicationPanel.Controls.Add(this.SaveLabel);
             this.ApplicationPanel.Controls.Add(this.ReminderName);
             this.ApplicationPanel.Controls.Add(this.RepeatInput);
@@ -97,6 +103,23 @@
             this.ApplicationPanel.Size = new System.Drawing.Size(426, 290);
             this.ApplicationPanel.TabIndex = 3;
             this.ApplicationPanel.Visible = false;
+            // 
+            // SaveLabel
+            // 
+            this.SaveLabel.AutoSize = true;
+            this.SaveLabel.Location = new System.Drawing.Point(4, 131);
+            this.SaveLabel.Name = "SaveLabel";
+            this.SaveLabel.Size = new System.Drawing.Size(150, 13);
+            this.SaveLabel.TabIndex = 10;
+            this.SaveLabel.Text = "I want to save this reminder as";
+            // 
+            // ReminderName
+            // 
+            this.ReminderName.Location = new System.Drawing.Point(160, 128);
+            this.ReminderName.MaxLength = 10;
+            this.ReminderName.Name = "ReminderName";
+            this.ReminderName.Size = new System.Drawing.Size(102, 20);
+            this.ReminderName.TabIndex = 9;
             // 
             // RepeatInput
             // 
@@ -157,22 +180,39 @@
             this.WelcomeMessage.Text = "Welcome";
             this.WelcomeMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ReminderName
+            // ReminderList
             // 
-            this.ReminderName.Location = new System.Drawing.Point(160, 128);
-            this.ReminderName.MaxLength = 10;
-            this.ReminderName.Name = "ReminderName";
-            this.ReminderName.Size = new System.Drawing.Size(102, 20);
-            this.ReminderName.TabIndex = 9;
+            this.ReminderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.RName,
+            this.RMessage,
+            this.RTime,
+            this.RRepeat});
+            this.ReminderList.HideSelection = false;
+            this.ReminderList.Location = new System.Drawing.Point(7, 169);
+            this.ReminderList.Name = "ReminderList";
+            this.ReminderList.Size = new System.Drawing.Size(416, 97);
+            this.ReminderList.TabIndex = 11;
+            this.ReminderList.UseCompatibleStateImageBehavior = false;
+            this.ReminderList.View = System.Windows.Forms.View.Details;
             // 
-            // SaveLabel
+            // RName
             // 
-            this.SaveLabel.AutoSize = true;
-            this.SaveLabel.Location = new System.Drawing.Point(4, 131);
-            this.SaveLabel.Name = "SaveLabel";
-            this.SaveLabel.Size = new System.Drawing.Size(150, 13);
-            this.SaveLabel.TabIndex = 10;
-            this.SaveLabel.Text = "I want to save this reminder as";
+            this.RName.Text = "Name";
+            // 
+            // RMessage
+            // 
+            this.RMessage.Text = "Message";
+            this.RMessage.Width = 235;
+            // 
+            // RTime
+            // 
+            this.RTime.Text = "Time";
+            this.RTime.Width = 70;
+            // 
+            // RRepeat
+            // 
+            this.RRepeat.Text = "Repeat";
+            this.RRepeat.Width = 50;
             // 
             // ReminderApplication
             // 
@@ -209,6 +249,11 @@
         private System.Windows.Forms.CheckBox RepeatInput;
         private System.Windows.Forms.Label SaveLabel;
         private System.Windows.Forms.TextBox ReminderName;
+        private System.Windows.Forms.ListView ReminderList;
+        private System.Windows.Forms.ColumnHeader RName;
+        private System.Windows.Forms.ColumnHeader RMessage;
+        private System.Windows.Forms.ColumnHeader RTime;
+        private System.Windows.Forms.ColumnHeader RRepeat;
     }
 }
 

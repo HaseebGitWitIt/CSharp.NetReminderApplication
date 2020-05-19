@@ -51,6 +51,16 @@ namespace Reminder_Application
                 bool repeat = RepeatInput.Checked;
                 Reminder temp = new Reminder(message, time, repeat, name);
                 reminders.Add(temp);
+                UpdateReminders();
+            }
+        }
+
+        private void UpdateReminders()
+        {
+            foreach(Reminder r in reminders)
+            {
+                string[] row = { r.name, r.message, r.time.ToString(), r.repeat.ToString()};
+                ReminderList.Items.Add(new ListViewItem(row));
             }
         }
     }
