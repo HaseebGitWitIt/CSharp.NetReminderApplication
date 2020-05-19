@@ -10,11 +10,32 @@ using System.Windows.Forms;
 
 namespace Reminder_Application
 {
-    public partial class Form1 : Form
+    public partial class ReminderApplication : Form
     {
-        public Form1()
+        private String username;
+        public ReminderApplication()
         {
             InitializeComponent();
+        }
+
+        private void UsernameSubmitButton_Click(object sender, EventArgs e)
+        {
+            if(ValidateUserInput(UsernameInput.Text))
+            {
+                username = UsernameInput.Text;
+                WelcomeMessage.Text = "Hello " + username + ",\n Welcome to Reminder Application!";
+                UsernamePanel.Visible = false;
+                ApplicationPanel.Visible = true;
+            }
+        }
+
+        private Boolean ValidateUserInput(String input)
+        {
+            if(input.Trim().Length > 1)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
