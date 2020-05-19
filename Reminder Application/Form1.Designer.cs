@@ -33,7 +33,11 @@
             this.UsernameInput = new System.Windows.Forms.TextBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.ApplicationPanel = new System.Windows.Forms.Panel();
+            this.ReminderMessage = new System.Windows.Forms.TextBox();
+            this.ReminderLabel = new System.Windows.Forms.Label();
             this.WelcomeMessage = new System.Windows.Forms.Label();
+            this.TimeInput = new System.Windows.Forms.DateTimePicker();
+            this.SubmitReminder = new System.Windows.Forms.Button();
             this.UsernamePanel.SuspendLayout();
             this.ApplicationPanel.SuspendLayout();
             this.SuspendLayout();
@@ -77,12 +81,34 @@
             // 
             // ApplicationPanel
             // 
+            this.ApplicationPanel.Controls.Add(this.SubmitReminder);
+            this.ApplicationPanel.Controls.Add(this.TimeInput);
+            this.ApplicationPanel.Controls.Add(this.ReminderMessage);
+            this.ApplicationPanel.Controls.Add(this.ReminderLabel);
             this.ApplicationPanel.Controls.Add(this.WelcomeMessage);
             this.ApplicationPanel.Location = new System.Drawing.Point(12, 26);
             this.ApplicationPanel.Name = "ApplicationPanel";
             this.ApplicationPanel.Size = new System.Drawing.Size(426, 290);
             this.ApplicationPanel.TabIndex = 3;
             this.ApplicationPanel.Visible = false;
+            // 
+            // ReminderMessage
+            // 
+            this.ReminderMessage.Location = new System.Drawing.Point(17, 67);
+            this.ReminderMessage.MaxLength = 100;
+            this.ReminderMessage.Multiline = true;
+            this.ReminderMessage.Name = "ReminderMessage";
+            this.ReminderMessage.Size = new System.Drawing.Size(212, 51);
+            this.ReminderMessage.TabIndex = 5;
+            // 
+            // ReminderLabel
+            // 
+            this.ReminderLabel.AutoSize = true;
+            this.ReminderLabel.Location = new System.Drawing.Point(14, 51);
+            this.ReminderLabel.Name = "ReminderLabel";
+            this.ReminderLabel.Size = new System.Drawing.Size(281, 13);
+            this.ReminderLabel.TabIndex = 4;
+            this.ReminderLabel.Text = "Enter a reminder message and select a time to me notified:";
             // 
             // WelcomeMessage
             // 
@@ -93,6 +119,24 @@
             this.WelcomeMessage.TabIndex = 0;
             this.WelcomeMessage.Text = "Welcome";
             this.WelcomeMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TimeInput
+            // 
+            this.TimeInput.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.TimeInput.Location = new System.Drawing.Point(236, 66);
+            this.TimeInput.Name = "TimeInput";
+            this.TimeInput.ShowUpDown = true;
+            this.TimeInput.Size = new System.Drawing.Size(173, 20);
+            this.TimeInput.TabIndex = 6;
+            // 
+            // SubmitReminder
+            // 
+            this.SubmitReminder.Location = new System.Drawing.Point(187, 124);
+            this.SubmitReminder.Name = "SubmitReminder";
+            this.SubmitReminder.Size = new System.Drawing.Size(75, 23);
+            this.SubmitReminder.TabIndex = 7;
+            this.SubmitReminder.Text = "Submit";
+            this.SubmitReminder.UseVisualStyleBackColor = true;
             // 
             // ReminderApplication
             // 
@@ -122,6 +166,10 @@
         private System.Windows.Forms.Label UsernameLabel;
         private System.Windows.Forms.Panel ApplicationPanel;
         private System.Windows.Forms.Label WelcomeMessage;
+        private System.Windows.Forms.TextBox ReminderMessage;
+        private System.Windows.Forms.Label ReminderLabel;
+        private System.Windows.Forms.DateTimePicker TimeInput;
+        private System.Windows.Forms.Button SubmitReminder;
     }
 }
 
