@@ -52,15 +52,31 @@ namespace Reminder_Application
                 Reminder temp = new Reminder(message, time, repeat, name);
                 reminders.Add(temp);
                 UpdateReminders();
+                ClearFields();
             }
+        }
+
+        private void ClearFields()
+        {
+            ReminderMessage.Text = "";
+            ReminderName.Text = "";
         }
 
         private void UpdateReminders()
         {
+            ReminderList.Items.Clear();
             foreach(Reminder r in reminders)
             {
                 string[] row = { r.name, r.message, r.time.ToString(), r.repeat.ToString()};
                 ReminderList.Items.Add(new ListViewItem(row));
+            }
+        }
+
+        private void RemoveListItem_Click(object sender, EventArgs e)
+        {
+            foreach(ListViewItem item in ReminderList.SelectedItems)
+            {
+                ReminderList.Items.Remove(item);
             }
         }
     }

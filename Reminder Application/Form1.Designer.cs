@@ -46,6 +46,7 @@
             this.RMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RRepeat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RemoveListItem = new System.Windows.Forms.Button();
             this.UsernamePanel.SuspendLayout();
             this.ApplicationPanel.SuspendLayout();
             this.SuspendLayout();
@@ -89,6 +90,7 @@
             // 
             // ApplicationPanel
             // 
+            this.ApplicationPanel.Controls.Add(this.RemoveListItem);
             this.ApplicationPanel.Controls.Add(this.ReminderList);
             this.ApplicationPanel.Controls.Add(this.SaveLabel);
             this.ApplicationPanel.Controls.Add(this.ReminderName);
@@ -187,8 +189,9 @@
             this.RMessage,
             this.RTime,
             this.RRepeat});
+            this.ReminderList.FullRowSelect = true;
             this.ReminderList.HideSelection = false;
-            this.ReminderList.Location = new System.Drawing.Point(7, 169);
+            this.ReminderList.Location = new System.Drawing.Point(3, 155);
             this.ReminderList.Name = "ReminderList";
             this.ReminderList.Size = new System.Drawing.Size(416, 97);
             this.ReminderList.TabIndex = 11;
@@ -213,6 +216,16 @@
             // 
             this.RRepeat.Text = "Repeat";
             this.RRepeat.Width = 50;
+            // 
+            // RemoveListItem
+            // 
+            this.RemoveListItem.Location = new System.Drawing.Point(4, 258);
+            this.RemoveListItem.Name = "RemoveListItem";
+            this.RemoveListItem.Size = new System.Drawing.Size(75, 23);
+            this.RemoveListItem.TabIndex = 12;
+            this.RemoveListItem.Text = "Remove";
+            this.RemoveListItem.UseVisualStyleBackColor = true;
+            this.RemoveListItem.Click += new System.EventHandler(this.RemoveListItem_Click);
             // 
             // ReminderApplication
             // 
@@ -254,6 +267,7 @@
         private System.Windows.Forms.ColumnHeader RMessage;
         private System.Windows.Forms.ColumnHeader RTime;
         private System.Windows.Forms.ColumnHeader RRepeat;
+        private System.Windows.Forms.Button RemoveListItem;
     }
 }
 
