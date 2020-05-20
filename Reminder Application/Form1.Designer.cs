@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.UsernamePanel = new System.Windows.Forms.Panel();
             this.UsernameSubmitButton = new System.Windows.Forms.Button();
             this.UsernameInput = new System.Windows.Forms.TextBox();
@@ -47,6 +48,7 @@
             this.RTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RRepeat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RemoveListItem = new System.Windows.Forms.Button();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.UsernamePanel.SuspendLayout();
             this.ApplicationPanel.SuspendLayout();
             this.SuspendLayout();
@@ -205,7 +207,7 @@
             // RMessage
             // 
             this.RMessage.Text = "Message";
-            this.RMessage.Width = 235;
+            this.RMessage.Width = 232;
             // 
             // RTime
             // 
@@ -226,6 +228,12 @@
             this.RemoveListItem.Text = "Remove";
             this.RemoveListItem.UseVisualStyleBackColor = true;
             this.RemoveListItem.Click += new System.EventHandler(this.RemoveListItem_Click);
+            // 
+            // Timer
+            // 
+            this.Timer.Enabled = true;
+            this.Timer.Interval = 30000;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // ReminderApplication
             // 
@@ -268,6 +276,7 @@
         private System.Windows.Forms.ColumnHeader RTime;
         private System.Windows.Forms.ColumnHeader RRepeat;
         private System.Windows.Forms.Button RemoveListItem;
+        private System.Windows.Forms.Timer Timer;
     }
 }
 

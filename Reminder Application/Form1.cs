@@ -15,6 +15,7 @@ namespace Reminder_Application
     {
         List<Reminder> reminders = new List<Reminder>();
         private String username;
+        private readonly int DEFAULT_POLL_INTERVAL = 30000;
         public ReminderApplication()
         {
             InitializeComponent();
@@ -67,7 +68,8 @@ namespace Reminder_Application
             ReminderList.Items.Clear();
             foreach(Reminder r in reminders)
             {
-                string[] row = { r.name, r.message, r.time.ToString(), r.repeat.ToString()};
+                String time = r.time.ToString("h:mm tt");
+                string[] row = { r.name, r.message,time, r.repeat.ToString()};
                 ReminderList.Items.Add(new ListViewItem(row));
             }
         }
@@ -79,5 +81,12 @@ namespace Reminder_Application
                 ReminderList.Items.Remove(item);
             }
         }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+         
+        }
+
+       
     }
 }
