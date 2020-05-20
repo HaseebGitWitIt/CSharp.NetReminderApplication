@@ -50,6 +50,7 @@
             this.WelcomeMessage = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.Icon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.Popup = new Tulpep.NotificationWindow.PopupNotifier();
             this.UsernamePanel.SuspendLayout();
             this.ApplicationPanel.SuspendLayout();
             this.SuspendLayout();
@@ -242,6 +243,19 @@
             this.Icon.Visible = true;
             this.Icon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Icon_MouseDoubleClick);
             // 
+            // Popup
+            // 
+            this.Popup.BodyColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Popup.ContentColor = System.Drawing.SystemColors.ButtonFace;
+            this.Popup.ContentFont = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Popup.ContentText = null;
+            this.Popup.Image = null;
+            this.Popup.IsRightToLeft = false;
+            this.Popup.OptionsMenu = null;
+            this.Popup.Size = new System.Drawing.Size(400, 100);
+            this.Popup.TitleFont = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Popup.TitleText = "Reminder Application";
+            // 
             // ReminderApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -286,6 +300,7 @@
         private System.Windows.Forms.Button RemoveListItem;
         private System.Windows.Forms.Timer Timer;
         private System.Windows.Forms.NotifyIcon Icon;
+        private Tulpep.NotificationWindow.PopupNotifier Popup;
     }
 }
 

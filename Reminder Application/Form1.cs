@@ -133,10 +133,17 @@ namespace Reminder_Application
             }
         }
 
+        private void SendPopup(Reminder r)
+        {
+            Popup.ContentText = r.message;
+            Popup.Popup();
+        }
+
         private List<int> SendReminder(Reminder r)
         {
             List<int> removeReminderIndex = new List<int>();
             System.Diagnostics.Debug.WriteLine("\nMessage: " + r.message+ "\n");
+            SendPopup(r);
             if(!r.repeat)
             {
                 for(int a = 0; a < reminders.Count; a++)
