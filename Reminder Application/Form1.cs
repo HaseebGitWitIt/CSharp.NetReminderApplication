@@ -205,6 +205,22 @@ namespace Reminder_Application
             return closestReminder;
         }
 
-       
+        private void ReminderApplication_Resize(object sender, EventArgs e)
+        {
+            bool mousePointerNotOnTaskBar = Screen.GetWorkingArea(this).Contains(Cursor.Position);
+            if(WindowState == FormWindowState.Minimized && mousePointerNotOnTaskBar)
+            {
+                Icon.Icon = SystemIcons.Application;
+                ShowInTaskbar = false;
+                Icon.Visible = true;
+            }
+        }
+
+        private void Icon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            ShowInTaskbar = true;
+            Icon.Visible = false;
+        }
     }
 }

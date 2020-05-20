@@ -34,6 +34,12 @@
             this.UsernameInput = new System.Windows.Forms.TextBox();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.ApplicationPanel = new System.Windows.Forms.Panel();
+            this.RemoveListItem = new System.Windows.Forms.Button();
+            this.ReminderList = new System.Windows.Forms.ListView();
+            this.RName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.RRepeat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SaveLabel = new System.Windows.Forms.Label();
             this.ReminderName = new System.Windows.Forms.TextBox();
             this.RepeatInput = new System.Windows.Forms.CheckBox();
@@ -42,13 +48,8 @@
             this.ReminderMessage = new System.Windows.Forms.TextBox();
             this.ReminderLabel = new System.Windows.Forms.Label();
             this.WelcomeMessage = new System.Windows.Forms.Label();
-            this.ReminderList = new System.Windows.Forms.ListView();
-            this.RName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.RMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.RTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.RRepeat = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.RemoveListItem = new System.Windows.Forms.Button();
             this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.Icon = new System.Windows.Forms.NotifyIcon(this.components);
             this.UsernamePanel.SuspendLayout();
             this.ApplicationPanel.SuspendLayout();
             this.SuspendLayout();
@@ -107,6 +108,51 @@
             this.ApplicationPanel.Size = new System.Drawing.Size(426, 290);
             this.ApplicationPanel.TabIndex = 3;
             this.ApplicationPanel.Visible = false;
+            // 
+            // RemoveListItem
+            // 
+            this.RemoveListItem.Location = new System.Drawing.Point(4, 258);
+            this.RemoveListItem.Name = "RemoveListItem";
+            this.RemoveListItem.Size = new System.Drawing.Size(75, 23);
+            this.RemoveListItem.TabIndex = 12;
+            this.RemoveListItem.Text = "Remove";
+            this.RemoveListItem.UseVisualStyleBackColor = true;
+            this.RemoveListItem.Click += new System.EventHandler(this.RemoveListItem_Click);
+            // 
+            // ReminderList
+            // 
+            this.ReminderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.RName,
+            this.RMessage,
+            this.RTime,
+            this.RRepeat});
+            this.ReminderList.FullRowSelect = true;
+            this.ReminderList.HideSelection = false;
+            this.ReminderList.Location = new System.Drawing.Point(3, 155);
+            this.ReminderList.Name = "ReminderList";
+            this.ReminderList.Size = new System.Drawing.Size(416, 97);
+            this.ReminderList.TabIndex = 11;
+            this.ReminderList.UseCompatibleStateImageBehavior = false;
+            this.ReminderList.View = System.Windows.Forms.View.Details;
+            // 
+            // RName
+            // 
+            this.RName.Text = "Name";
+            // 
+            // RMessage
+            // 
+            this.RMessage.Text = "Message";
+            this.RMessage.Width = 232;
+            // 
+            // RTime
+            // 
+            this.RTime.Text = "Time";
+            this.RTime.Width = 70;
+            // 
+            // RRepeat
+            // 
+            this.RRepeat.Text = "Repeat";
+            this.RRepeat.Width = 50;
             // 
             // SaveLabel
             // 
@@ -184,56 +230,17 @@
             this.WelcomeMessage.Text = "Welcome";
             this.WelcomeMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ReminderList
-            // 
-            this.ReminderList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.RName,
-            this.RMessage,
-            this.RTime,
-            this.RRepeat});
-            this.ReminderList.FullRowSelect = true;
-            this.ReminderList.HideSelection = false;
-            this.ReminderList.Location = new System.Drawing.Point(3, 155);
-            this.ReminderList.Name = "ReminderList";
-            this.ReminderList.Size = new System.Drawing.Size(416, 97);
-            this.ReminderList.TabIndex = 11;
-            this.ReminderList.UseCompatibleStateImageBehavior = false;
-            this.ReminderList.View = System.Windows.Forms.View.Details;
-            // 
-            // RName
-            // 
-            this.RName.Text = "Name";
-            // 
-            // RMessage
-            // 
-            this.RMessage.Text = "Message";
-            this.RMessage.Width = 232;
-            // 
-            // RTime
-            // 
-            this.RTime.Text = "Time";
-            this.RTime.Width = 70;
-            // 
-            // RRepeat
-            // 
-            this.RRepeat.Text = "Repeat";
-            this.RRepeat.Width = 50;
-            // 
-            // RemoveListItem
-            // 
-            this.RemoveListItem.Location = new System.Drawing.Point(4, 258);
-            this.RemoveListItem.Name = "RemoveListItem";
-            this.RemoveListItem.Size = new System.Drawing.Size(75, 23);
-            this.RemoveListItem.TabIndex = 12;
-            this.RemoveListItem.Text = "Remove";
-            this.RemoveListItem.UseVisualStyleBackColor = true;
-            this.RemoveListItem.Click += new System.EventHandler(this.RemoveListItem_Click);
-            // 
             // Timer
             // 
             this.Timer.Enabled = true;
             this.Timer.Interval = 30000;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
+            // Icon
+            // 
+            this.Icon.Text = "Reminder Application";
+            this.Icon.Visible = true;
+            this.Icon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.Icon_MouseDoubleClick);
             // 
             // ReminderApplication
             // 
@@ -247,6 +254,7 @@
             this.Name = "ReminderApplication";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reminder Aplication";
+            this.Resize += new System.EventHandler(this.ReminderApplication_Resize);
             this.UsernamePanel.ResumeLayout(false);
             this.UsernamePanel.PerformLayout();
             this.ApplicationPanel.ResumeLayout(false);
@@ -277,6 +285,7 @@
         private System.Windows.Forms.ColumnHeader RRepeat;
         private System.Windows.Forms.Button RemoveListItem;
         private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.NotifyIcon Icon;
     }
 }
 
